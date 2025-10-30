@@ -21,7 +21,7 @@ import prestigeHotel from "../assets/prestigeHotel.jpg";
 import prestigeHotel1 from "../assets/prestigeHotel1.jpg";
 import prestigeHotel2 from "../assets/prestigeHotel2.jpg";
 
-import kawrukyHotel from "../assets/kawrukyHotel.jpg";
+import KawrukyHotel from "../assets/KawrukyHotel.jpg";
 import kawrukyHotel1 from "../assets/kawrukyHotel1.jpg";
 import kawrukyHotel2 from "../assets/kawrukyHotel2.jpg";
 
@@ -63,7 +63,7 @@ export const HotelImage = [
   { src: eternohotels },
   { src: eternohotels1 },
   { src: eternohotels2 },
-  { src: kawrukyHotel },
+  { src: KawrukyHotel },
   { src: kawrukyHotel1 },
   { src: kawrukyHotel2 },
   { src: constantialHotel },
