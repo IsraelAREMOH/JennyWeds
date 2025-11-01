@@ -34,6 +34,10 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
           if (matched) {
             setGuest(matched);
             console.log("✅ Matched Guest:", matched);
+
+            if (matched.rsvpStatus === "pending") {
+              console.log("⚠️ Guest RSVP still pending — showing form.");
+            }
           } else {
             setMessage("❌ No matching guest found for this link.");
             console.warn("⚠️ Guest not found for:", uniqueId);
@@ -41,7 +45,8 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
         }
       } catch (err) {
         console.error("❌ Error loading guest:", err);
-        if (!cancelled) setMessage("❌ Invalid or expired RSVP link.");
+        if (!cancelled)
+          setMessage("❌ Could not load RSVP details. Please try again.");
       } finally {
         if (!cancelled) setLoading(false);
       }
