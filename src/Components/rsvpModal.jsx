@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import axios from "axios";
 import { fetchGuest, submitRsvp } from "../api/rsvpApi";
-import Confetti from "react-confetti"; // 🎉 Add this
-import { useWindowSize } from "react-use"; // 🎉 Add this
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 export default function RsvpModal({ isOpen, onClose, uniqueId }) {
   const [guest, setGuest] = useState(null);
@@ -11,8 +12,10 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
   const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [qrUrl, setQrUrl] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const { width, height } = useWindowSize(); // 🎉 Tracks screen size for confetti
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
     if (!isOpen || !uniqueId) return;
@@ -24,8 +27,6 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
       setMessage("");
       try {
         const data = await fetchGuest(uniqueId);
-        console.log("🧭 Raw guest data:", data);
-
         const matched = Array.isArray(data)
           ? data.find((g) => g.uniqueId === uniqueId)
           : data;
@@ -33,20 +34,14 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
         if (!cancelled) {
           if (matched) {
             setGuest(matched);
-            console.log("✅ Matched Guest:", matched);
-
-            if (matched.rsvpStatus === "pending") {
-              console.log("⚠️ Guest RSVP still pending — showing form.");
-            }
           } else {
-            setMessage("❌ No matching guest found for this link.");
-            console.warn("⚠️ Guest not found for:", uniqueId);
+            setMessage(" No matching guest found for this link.");
           }
         }
       } catch (err) {
-        console.error("❌ Error loading guest:", err);
+        console.error("Error loading guest:", err);
         if (!cancelled)
-          setMessage("❌ Could not load RSVP details. Please try again.");
+          setMessage(" Could not load RSVP details. Please try again.");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -58,18 +53,65 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
     };
   }, [isOpen, uniqueId]);
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!guest) return;
+
     setLoading(true);
+    setMessage("");
+
     try {
-      const res = await submitRsvp({ id: uniqueId, status, rsvpCount, notes });
-      setMessage(res.message || "✅ RSVP submitted successfully!");
-    } catch {
-      setMessage("❌ Failed to submit RSVP. Please try again.");
+      const res = await submitRsvp({
+        id: uniqueId,
+        status,
+        rsvpCount: Number(rsvpCount),
+        notes,
+      });
+
+      console.log("RSVP SUCCESS:", res);
+
+      // Update RSVP state
+      setMessage("RSVP submitted successfully!");
+      setGuest((prev) => ({ ...prev, rsvpStatus: status }));
+
+      // If accepted, fetch QR and auto-download
+      if (status?.toLowerCase() === "accepted") {
+        console.log("FETCHING QR...");
+        const encodedId = encodeURIComponent(uniqueId);
+        const BASE_URL =
+          import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+        const { data } = await axios.get(`${BASE_URL}/guest/${encodedId}/qr`);
+        console.log("QR RESPONSE:", data);
+
+        setQrUrl(data.qrUrl);
+
+        // AUTO-DOWNLOAD LOGIC
+        try {
+          const response = await fetch(data.qrUrl);
+          const blob = await response.blob();
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = `${guest.firstName || "Guest"}_QR.png`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+          console.log("QR downloaded successfully.");
+        } catch (downloadErr) {
+          console.error("QR auto-download failed:", downloadErr);
+        }
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error("RSVP ERROR:", err.response?.data || err);
+      setMessage("Failed to submit RSVP.");
+      setIsSubmitted(true);
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   if (!isOpen || typeof document === "undefined") return null;
 
@@ -80,7 +122,6 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      {/* 🎉 Confetti only visible when modal is open */}
       <Confetti
         width={width}
         height={height}
@@ -100,7 +141,7 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
 
         {loading && <p className="text-center text-gray-600">Loading...</p>}
 
-        {!loading && !message && guest && (
+        {!loading && guest && !isSubmitted && (
           <>
             <h2 className="text-2xl font-bold text-center mb-4 text-[#6F4E37]">
               RSVP for {guest.firstName} {guest.lastName}
@@ -156,9 +197,15 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
           </>
         )}
 
-        {message && (
-          <div className="text-center text-lg font-medium text-green-700 mt-4">
-            {message}
+        {isSubmitted && (
+          <div className="text-center mt-4">
+            <p className="text-lg font-medium text-green-700">{message}</p>
+            {qrUrl && (
+              <div className="mt-4">
+                <p className="font-medium mb-2">Your QR Code:</p>
+                <img src={qrUrl} alt="QR Code" className="mx-auto w-40 h-40" />
+              </div>
+            )}
           </div>
         )}
       </div>
