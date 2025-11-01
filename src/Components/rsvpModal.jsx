@@ -80,7 +80,7 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
         const encodedId = encodeURIComponent(uniqueId);
         const BASE_URL =
           import.meta.env.VITE_API_URL || "http://localhost:5000/api";
-        const { data } = await axios.get(`${BASE_URL}/guest/${encodedId}/qr`);
+        const { data } = await axios.get(`${BASE_URL}/guest?id=${encodedId}`);
         console.log("QR RESPONSE:", data);
 
         setQrUrl(data.qrUrl);
