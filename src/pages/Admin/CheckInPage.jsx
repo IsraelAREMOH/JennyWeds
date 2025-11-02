@@ -38,7 +38,14 @@ export default function CheckInPage() {
   const { ref } = useZxing({
     onDecodeResult(result) {
       const text = result.getText();
-      handleValidate(text);
+      try {
+        const payload = JSON.parse(text); // ← ADD THIS
+        const uniqueId = payload.uniqueId; // ← Extract uniqueId
+        handleValidate(uniqueId); // ← Send only uniqueId
+      } catch (err) {
+        console.error("Invalid QR format:", err, text);
+        setError("Invalid QR code");
+      }
     },
     constraints: {
       video: { facingMode },
