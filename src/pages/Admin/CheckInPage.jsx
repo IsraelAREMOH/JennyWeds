@@ -39,9 +39,9 @@ export default function CheckInPage() {
     onDecodeResult(result) {
       const text = result.getText();
       try {
-        const payload = JSON.parse(text); // ← ADD THIS
-        const uniqueId = payload.uniqueId; // ← Extract uniqueId
-        handleValidate(uniqueId); // ← Send only uniqueId
+        const payload = JSON.parse(text);
+        const uniqueId = payload.uniqueId; //  Extract uniqueId
+        handleValidate(uniqueId); // Send only uniqueId
       } catch (err) {
         console.error("Invalid QR format:", err, text);
         setError("Invalid QR code");
@@ -52,11 +52,11 @@ export default function CheckInPage() {
     },
     onError(error) {
       if (error.name === "NotAllowedError") {
-        setCameraError("🚫 Camera access denied. Please allow permissions.");
+        setCameraError(" Camera access denied. Please allow permissions.");
       } else if (error.name === "NotFoundError") {
-        setCameraError("⚠️ No camera found on this device.");
+        setCameraError(" No camera found on this device.");
       } else if (error.name === "NotReadableError") {
-        setCameraError("⚙️ Camera is in use by another app.");
+        setCameraError(" Camera is in use by another app.");
       } else {
         console.warn("Camera error:", error);
       }
@@ -77,7 +77,7 @@ export default function CheckInPage() {
     else navigate("/admin/dashboard");
   };
 
-  // 🎉 Confetti Animation
+  //  Confetti Animation
   const triggerConfetti = () => {
     const duration = 1 * 1000;
     const end = Date.now() + duration;

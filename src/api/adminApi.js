@@ -1,10 +1,8 @@
-// frontend/src/api/adminApi.js
 import axios from "axios";
 
 const BASE = import.meta.env?.VITE_API_URL || "http://localhost:5000/api";
 const TOKEN_KEY = "adminToken";
 
-// Create a reusable Axios instance
 const api = axios.create({
   baseURL: BASE,
   headers: { "Content-Type": "application/json" },
@@ -17,7 +15,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// ---- Auth ----
+//  Auth
 export async function adminLogin(email, password) {
   try {
     const res = await api.post("/admin/login", { email, password });
@@ -35,7 +33,7 @@ export function adminLogout() {
   localStorage.removeItem(TOKEN_KEY);
 }
 
-// ---- Guest Management ----
+//  Guest Management
 export async function getGuests({
   page = 1,
   perPage = 50,

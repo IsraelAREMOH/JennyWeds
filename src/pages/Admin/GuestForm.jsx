@@ -1,4 +1,3 @@
-// frontend/src/pages/Admin/GuestForm.jsx
 import { useEffect, useState } from "react";
 import { createGuest, updateGuest } from "../../api/adminApi";
 

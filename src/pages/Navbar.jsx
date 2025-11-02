@@ -31,15 +31,15 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-200 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Left: Logo & Event Text */}
+          {/*  Logo & Event Text */}
           <div className="flex flex-col sm:flex-row items-center sm:items-baseline text-center sm:text-left flex-shrink-0">
             <h4
-              className="text-5xl sm:text-4xl md:text-4xl"
-              style={{ fontFamily: "'Allura', cursive" }}
+              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl"
+              style={{ fontFamily: "'Allura', cursive", fontDisplay: "swap" }}
             >
               J & A
             </h4>
-            <p className="sm:ml-3 mt-1 sm:mt-0 text-xs sm:text-sm md:text-lg lg:text-2xl">
+            <p className="sm:ml-3 mt-1 sm:mt-0 text-xs sm:text-sm md:text-base lg:text-lg">
               29. 11. 25 | Benin, Nigeria
             </p>
           </div>

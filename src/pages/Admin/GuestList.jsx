@@ -1,4 +1,3 @@
-// frontend/src/pages/Admin/GuestList.jsx
 import { useEffect, useState, useCallback } from "react";
 import {
   getGuests,
