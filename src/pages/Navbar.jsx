@@ -132,15 +132,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Left: Logo & Event Text — FIXED FOR ANDROID */}
           <div className="flex flex-col sm:flex-row items-center sm:items-baseline text-center sm:text-left flex-shrink-0 w-auto sm:w-auto">
-            <h4
-              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
-              style={{
-                fontFamily: "'Allura', cursive, sans-serif",
-                fontDisplay: "swap",
-              }}
-            >
-              J & A
-            </h4>
+            <img
+              src="%PUBLIC_URL%/logo-ja.svg"
+              alt="J & A"
+              className="h-12 sm:h-14 md:h-16 w-auto"
+            />
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 mt-1 sm:mt-0 sm:ml-2">
               29. 11. 25 | Benin, Nigeria
             </p>
