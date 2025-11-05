@@ -133,8 +133,11 @@ const Navbar = () => {
           {/* Left: Logo & Event Text — FIXED FOR ANDROID */}
           <div className="flex flex-col sm:flex-row items-center sm:items-baseline text-center sm:text-left flex-shrink-0 w-auto sm:w-auto">
             <h4
-              className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
-              style={{ fontFamily: "'Allura', cursive", fontDisplay: "swap" }}
+              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
+              style={{
+                fontFamily: "'Allura', cursive, sans-serif",
+                fontDisplay: "swap",
+              }}
             >
               J & A
             </h4>
