@@ -5,6 +5,24 @@
     <link rel="icon" type="image/png" href="%PUBLIC_URL%/wedlog.png?v=5" />
 
     <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Allura-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @font-face {
+        font-family: "Allura";
+        src: url("%PUBLIC_URL%/fonts/Allura-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
