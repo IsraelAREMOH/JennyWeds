@@ -33,12 +33,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col sm:flex-row items-center sm:items-baseline text-center sm:text-left flex-shrink-0">
             <h4
-              className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl"
+              className="text-4xl sm:text-5xl md:text-5xl text-gray-600 lg:text-6xl"
               style={{ fontFamily: "'Allura', cursive", fontDisplay: "swap" }}
             >
               J & A
             </h4>
-            <p className="sm:ml-3 mt-1 sm:mt-0 text-xs sm:text-sm md:text-base lg:text-lg">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 mt-1 sm:mt-0 sm:ml-2">
               29. 11. 25 | Benin, Nigeria
             </p>
           </div>
