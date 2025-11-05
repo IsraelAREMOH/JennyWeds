@@ -35,11 +35,10 @@
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 8px !important; /* ↓ smaller arrow */
+  font-size: 8px !important;
 
   font-weight: bold !important;
 }
-
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: #9caf88 !important;
@@ -52,9 +51,9 @@
   cursor: not-allowed !important;
 }
 
-/* 🔹 Target only the hotel image Swiper */
+/*  Target only the hotel image Swiper */
 .hotel-image-swiper .swiper-pagination-bullet {
-  background-color: #f5f5dc; /* beige-300 */
+  background-color: #f5f5dc;
   opacity: 1;
   width: 10px;
   height: 10px;
@@ -63,7 +62,7 @@
 }
 
 .hotel-image-swiper .swiper-pagination-bullet-active {
-  background-color: #d4af37; /* black or your accent color */
+  background-color: #d4af37;
   width: 20px;
   border-radius: 8px;
 }
@@ -74,6 +73,21 @@
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
 }
 
 @media (prefers-color-scheme: light) {
