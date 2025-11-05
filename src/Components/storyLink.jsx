@@ -6,7 +6,7 @@ const StoryLink = () => {
     <section className="bg-gray-100 py-12">
       {/* Top Section - Our Story */}
       <div className="text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-serif mb-6">
+        <h2 className="text-2xl md:text-3xlb text-gray-600 font-serif mb-6">
           See how it all started
         </h2>
         <div className="flex items-center justify-center space-x-6">
