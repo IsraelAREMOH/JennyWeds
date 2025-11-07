@@ -11,19 +11,21 @@ import StylePage from "./pages/Style";
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <ScrollHandler />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/rsvp" element={<Home />} />
-          <Route path="/ourstory" element={<OurStory />} />
-          <Route path="/travel" element={<Travel />} />
-          <Route path="/stylepage" element={<StylePage />} />
-          <Route path="/admin/*" element={<Registry />} />
-        </Routes>
-      </Router>
-      <Footer />
+      <div className="bg-gradient-to-br from-[#e9f3ea] via-[#dfe9d9] to-[#c8b7a6]">
+        <Router>
+          <Navbar />
+          <ScrollHandler />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/rsvp" element={<Home />} />
+            <Route path="/ourstory" element={<OurStory />} />
+            <Route path="/travel" element={<Travel />} />
+            <Route path="/stylepage" element={<StylePage />} />
+            <Route path="/admin/*" element={<Registry />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
     </>
   );
 }

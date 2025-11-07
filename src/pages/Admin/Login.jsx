@@ -24,7 +24,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-screen text-gray-600 flex items-center justify-center bg-gray-50 p-6">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow">
         <h2 className="text-2xl font-bold mb-4 text-center">Admin Login</h2>
         {err && <div className="text-red-600 mb-3">{err}</div>}
@@ -38,7 +38,7 @@ export default function AdminLogin() {
             type="email"
           />
           <input
-            className="w-full border rounded px-3 py-2"
+            className="w-full text-gray-600 border rounded px-3 py-2"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
