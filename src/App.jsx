@@ -11,7 +11,7 @@ import StylePage from "./pages/Style";
 function App() {
   return (
     <>
-      <div className="bg-gradient-to-br from-[#e9f3ea] via-[#dfe9d9] to-[#c8b7a6]">
+      <div className="bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
         <Router>
           <Navbar />
           <ScrollHandler />

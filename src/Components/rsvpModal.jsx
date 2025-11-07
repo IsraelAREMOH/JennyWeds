@@ -359,6 +359,19 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
           X
         </button>
 
+        {!uniqueId && (
+          <div className="text-center py-6">
+            <p className="text-gray-700 font-medium">
+              Please use your unique invitation link to RSVP.
+            </p>
+            <p className="text-gray-600 text-sm mt-2">
+              If you didn’t receive one, contact us at
+              <h2 className="text-[#6F4E37]">+2348060947379</h2>
+              <h2 className="text-[#6F4E37]">+2349030135489</h2>
+            </p>
+          </div>
+        )}
+
         {loading && <p className="text-center text-gray-600">Loading...</p>}
 
         {!loading && guest && !isSubmitted && (

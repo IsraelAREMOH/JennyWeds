@@ -1,5 +1,6 @@
 import { motion as Motion } from "framer-motion";
 import jenny from "../assets/jenny.jpg";
+import SaveTheDateButton from "./SaveTheDateButton";
 
 const HeroBanner = () => {
   return (
@@ -51,16 +52,12 @@ const HeroBanner = () => {
             November 29, 2025 | Benin, Nigeria
           </Motion.p>
 
-          <Motion.button
-            className="mt-4 px-4 py-2 sm:px-6 sm:py-3 bg-[#9CAF88] text-[#F8F5DC] rounded-2xl shadow-lg hover:bg-[#AFCF9E] transition text-sm sm:text-base"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Save the Date
-          </Motion.button>
+          <SaveTheDateButton
+            title="Jennifer & Aisosa's Wedding Celebration"
+            location="Benin, Nigeria"
+            startDate="2025-11-29T15:00:00+01:00"
+            endDate="2025-11-29T22:00:00+01:00"
+          />
         </Motion.div>
 
         {/* Hashtag bottom-left */}

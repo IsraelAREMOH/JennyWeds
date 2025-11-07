@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SaveTheDateButton from "../Components/SaveTheDateButton";
 
 const Footer = () => {
   const [timeLeft, setTimeLeft] = useState({});
@@ -48,9 +49,15 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <button className="bg-[#6F4E37] text-white px-5 py-2 mt-4 rounded-md text-sm sm:text-base hover:bg-[#A52A2A] transition">
-            Hotel List
-          </button>
+
+          <SaveTheDateButton
+            label="Join Our Engagement"
+            bgColor="bg-[#6F4E37]"
+            hoverColor="hover:bg-[#F1D9D2]"
+            textColor="text-wite"
+            startDate="2025-11-29T13:00:00+01:00"
+            endDate="2025-11-29T22:00:00+01:00"
+          />
         </div>
 
         {/* Contact Info */}
