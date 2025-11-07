@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
 
           <SaveTheDateButton
-            label="Join Our Engagement"
+            label="Save the Date"
             bgColor="bg-[#6F4E37]"
             hoverColor="hover:bg-[#F1D9D2]"
             textColor="text-wite"
