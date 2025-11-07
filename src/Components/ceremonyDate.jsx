@@ -102,7 +102,7 @@ export default function CeremonySection() {
             <p>1 OKO-OGBA ROAD, IRHIRHI</p>
             <p>JUNCTION, OFF AIRPORT ROAD</p>
             <Motion.a
-              href="https://www.google.com/maps/place/LioraCity+Event+Center/"
+              href="https://www.google.com/maps/dir/Lagos/LioraCity+Event+Center,+ADP+junction,+1+Oko+Ogba+Road,+by+Irhirhi+Rd,+Airport+Rd,+Benin+City+300102,+Edo/@6.5874034,3.1671608,8z/data=!4m13!4m12!1m5!1m1!1s0x103b8b2ae68280c1:0xdc9e87a367c3d9cb!2m2!1d3.3552568!2d6.6137395!1m5!1m1!1s0x1040d1a95973a125:0xf594d035422c7342!2m2!1d5.590038!2d6.29515?authuser=0&entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#9CAF88] hover:underline font-medium mt-2"

@@ -350,7 +350,7 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
         gravity={0.15}
       />
 
-      <div className="relative bg-white rounded-2xl shadow-lg p-6 w-full max-w-md mx-auto my-auto">
+      <div className="relative text-gray-600 bg-white rounded-2xl shadow-lg p-6 w-full max-w-md mx-auto my-auto">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl"
@@ -364,10 +364,10 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
         {!loading && guest && !isSubmitted && (
           <>
             <h2 className="text-2xl font-bold text-center mb-4 text-[#6F4E37]">
-              RSVP for {guest.firstName} {guest.lastName}
+              RSVP for {guest.firstName}
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 text-gray-600">
               <div>
                 <label className="font-medium">Will you attend?</label>
                 <select
@@ -388,7 +388,7 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
                     <label className="font-medium">Number of attendees:</label>
                     <input
                       type="number"
-                      className="border rounded-md p-2 w-full"
+                      className="border text-gray-600 rounded-md p-2 w-full"
                       min="1"
                       value={rsvpCount}
                       onChange={(e) => setRsvpCount(e.target.value)}
@@ -437,13 +437,13 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
                 <div className="mt-8">
                   <button
                     onClick={downloadQR}
-                    className="inline-block bg-amber-700 hover:bg-amber-800 text-white font-bold text-xl py-5 px-10 rounded-2xl shadow-xl transition transform hover:scale-110"
+                    className="inline-block bg-[#6F4E37] hover:bg-amber-800 text-white font-bold text-xl py-5 px-10 rounded-2xl shadow-xl transition transform hover:scale-110"
                   >
                     DOWNLOAD QR CODE
                   </button>
                 </div>
 
-                <p className="text-amber-800 mt-4 font-medium">
+                <p className="text-gray-600 mt-4 font-medium">
                   Save to phone • Show at entrance
                 </p>
               </div>

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollHandler from "./Components/ScrollHandler";
 import Navbar from "./pages/Navbar";
 import Home from "./pages/Home";
 import OurStory from "./pages/OurStory";
@@ -12,6 +13,7 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <ScrollHandler />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rsvp" element={<Home />} />
