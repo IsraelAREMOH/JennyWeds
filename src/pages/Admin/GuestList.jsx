@@ -66,9 +66,9 @@ export default function GuestList() {
   }
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold">Guests</h2>
+    <div className="p-6 text-gray-600">
+      <div className="flex justify-between text-gray-500 items-center mb-4">
+        <h2 className="text-xl text-gray-500 font-bold">Guests</h2>
         <div className="flex items-center space-x-2">
           <button
             onClick={() => {
@@ -117,10 +117,10 @@ export default function GuestList() {
         <div>Loading...</div>
       ) : (
         <>
-          <div className="overflow-x-auto bg-white shadow rounded">
+          <div className="overflow-x-auto text-gray-500 bg-white shadow rounded">
             <table className="min-w-full divide-y">
               <thead>
-                <tr className="bg-gray-50 text-left">
+                <tr className="bg-gray-50 text-gray-500 text-left">
                   <th className="px-4 py-2">ID</th>
                   <th className="px-4 py-2">Name</th>
                   <th className="px-4 py-2">Email</th>

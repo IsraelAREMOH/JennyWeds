@@ -33,7 +33,7 @@ export default function AdminDashboard() {
   return (
     <div className="p-6 text-gray-500">
       <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
-        <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+        <h1 className="text-2xl text-gray-600 font-bold">Admin Dashboard</h1>
         <div>
           <button
             onClick={() => nav("/admin/guests")}
@@ -47,19 +47,25 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-gray-500">
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Total Guests</div>
-          <div className="text-2xl font-bold">{stats.total}</div>
+          <div className="text-2xl text-gray-500 font-bold">{stats.total}</div>
         </div>
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Accepted</div>
-          <div className="text-2xl font-bold">{stats.accepted}</div>
+          <div className="text-2xl text-gray-500 font-bold">
+            {stats.accepted}
+          </div>
         </div>
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Pending</div>
-          <div className="text-2xl font-bold">{stats.pending}</div>
+          <div className="text-2xl text-gray-500 font-bold">
+            {stats.pending}
+          </div>
         </div>
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Checked-in</div>
-          <div className="text-2xl font-bold">{stats.attended}</div>
+          <div className="text-2xl text-gray-500 font-bold">
+            {stats.attended}
+          </div>
         </div>
       </div>
     </div>
