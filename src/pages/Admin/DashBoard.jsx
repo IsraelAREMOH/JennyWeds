@@ -31,7 +31,7 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-gray-500">
       <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
         <h1 className="text-2xl font-bold">Admin Dashboard</h1>
         <div>
@@ -44,7 +44,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-gray-500">
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Total Guests</div>
           <div className="text-2xl font-bold">{stats.total}</div>

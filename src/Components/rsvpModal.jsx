@@ -402,7 +402,7 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
                     <input
                       type="number"
                       className="border text-gray-600 rounded-md p-2 w-full"
-                      min="1"
+                      max="1"
                       value={rsvpCount}
                       onChange={(e) => setRsvpCount(e.target.value)}
                     />
