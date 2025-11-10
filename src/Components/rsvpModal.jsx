@@ -401,8 +401,9 @@ export default function RsvpModal({ isOpen, onClose, uniqueId }) {
                     <label className="font-medium">Number of attendees:</label>
                     <input
                       type="number"
-                      className="border text-gray-600 rounded-md p-2 w-full"
+                      className="border text-gray-600 rounded-md p-2 w-full cursor-not-allowed"
                       max="1"
+                      readOnly
                       value={rsvpCount}
                       onChange={(e) => setRsvpCount(e.target.value)}
                     />
