@@ -55,8 +55,8 @@ const Footer = () => {
             bgColor="bg-[#6F4E37]"
             hoverColor="hover:bg-[#F1D9D2]"
             textColor="text-wite"
-            startDate="2025-11-29T13:00:00+01:00"
-            endDate="2025-11-29T22:00:00+01:00"
+            startDate="2025-11-29T12:00:00+01:00"
+            endDate="2025-11-29T21:00:00+01:00"
           />
         </div>
 

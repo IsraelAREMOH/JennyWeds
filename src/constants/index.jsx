@@ -91,6 +91,7 @@ export const navItems = [
   { label: "Our Story", href: "/ourstory" },
   { label: "Where to Stay", href: "/travel" },
   { label: "Style Ideals", href: "/stylepage" },
+  { label: "EventPhotos", href: "/uploadphoto" },
   { label: "Registration", href: "/admin" },
 ];
 

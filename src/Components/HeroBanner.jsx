@@ -55,8 +55,8 @@ const HeroBanner = () => {
           <SaveTheDateButton
             title="Jennifer & Aisosa's Wedding Celebration"
             location="Benin, Nigeria"
-            startDate="2025-11-29T15:00:00+01:00"
-            endDate="2025-11-29T22:00:00+01:00"
+            startDate="2025-11-29T12:00:00+01:00"
+            endDate="2025-11-29T21:00:00+01:00"
           />
         </Motion.div>
 

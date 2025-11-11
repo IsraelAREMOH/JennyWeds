@@ -43,7 +43,7 @@ const Navbar = () => {
             </p>
           </div>
 
-          <ul className="hidden lg:flex ml-10 items-center space-x-8 xl:space-x-10">
+          <ul className="hidden lg:flex ml-10 items-center space-x-6 xl:space-x-8">
             {navItems.map((item, index) => (
               <li key={index}>
                 <NavLink className={getNavLinkClass} to={item.href}>
@@ -53,7 +53,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={handleOpenRsvp}
               className="py-2 px-4 rounded-md bg-gradient-to-r from-[#6F4E37] to-[#FFB6C1] text-white shadow hover:opacity-90 transition"

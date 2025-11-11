@@ -7,6 +7,7 @@ import Travel from "./pages/Travel";
 import Footer from "./pages/Footer";
 import Registry from "./pages/Registry";
 import StylePage from "./pages/Style";
+import UploadPhoto from "./pages/UploadPhoto";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/ourstory" element={<OurStory />} />
             <Route path="/travel" element={<Travel />} />
             <Route path="/stylepage" element={<StylePage />} />
+            <Route path="/uploadphoto" element={<UploadPhoto />} />
             <Route path="/admin/*" element={<Registry />} />
           </Routes>
         </Router>
