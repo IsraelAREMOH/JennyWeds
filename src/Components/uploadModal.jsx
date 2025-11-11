@@ -81,7 +81,7 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
           placeholder="Enter your name"
           value={uploader}
           onChange={(e) => setUploader(e.target.value)}
-          className="w-full border border-gray-300 p-2 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          className="w-full border text-gray-500 border-gray-300 p-2 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
         />
 
         {/* File Input */}
@@ -98,7 +98,7 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
             <img
               src={preview}
               alt="Preview"
-              className="w-full h-48 object-cover rounded-lg"
+              className="w-full text-gray-500 h-48 object-cover rounded-lg"
             />
           </div>
         )}
