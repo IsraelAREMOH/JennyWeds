@@ -1,4 +1,3 @@
-// components/HotelImages.jsx
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -10,7 +9,7 @@ const HotelImages = ({ hotel, setHoveredInfo }) => {
       modules={[Pagination]}
       pagination={{ clickable: true }}
       loop
-      nested={true} // 👈 critical for nested sliders
+      nested={true} //critical for nested sliders
       grabCursor={true}
       className="hotel-image-swiper rounded-lg overflow-hidden"
     >

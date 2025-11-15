@@ -1,15 +1,14 @@
-// components/HotelSlide.jsx
 import HotelImages from "../Components/hotelImages";
 
 const HotelSlide = ({ hotel, setHoveredInfo }) => {
   return (
     <div className="bg-white p-3 sm:p-4 rounded-xl flex flex-col justify-between h-full shadow-md">
-      {/* 🖼️ Image Carousel */}
+      {/*  Image Carousel */}
       <div className="relative mb-3 sm:mb-4">
         <HotelImages hotel={hotel} setHoveredInfo={setHoveredInfo} />
       </div>
 
-      {/* 🏨 Hotel Info */}
+      {/*  Hotel Info */}
       <div className="flex flex-col justify-between flex-grow text-center sm:text-left">
         <div>
           <h2 className="text-base sm:text-xl font-semibold text-gray-800 leading-tight">
@@ -35,7 +34,7 @@ const HotelSlide = ({ hotel, setHoveredInfo }) => {
         </div>
 
         <a
-          href="https://www.booking.com" // your external link here
+          href="https://www.booking.com"
           target="_blank" // opens in a new tab
           rel="noopener noreferrer" // security best practice
         >

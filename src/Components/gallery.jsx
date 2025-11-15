@@ -1,4 +1,3 @@
-// src/components/GalleryPage.jsx
 import { useState, useEffect, useCallback } from "react";
 import UploadModal from "./uploadModal";
 import axios from "axios";
@@ -74,7 +73,7 @@ export default function GalleryPage() {
     if (!newImage?.url) return;
     setImages((prev) => [newImage, ...prev]);
     setLikes((prev) => ({ ...prev, [newImage.public_id]: 0 }));
-    setIsModalOpen(false); // ✅ Close modal automatically
+    setIsModalOpen(false); // Close modal automatically
   };
 
   return (

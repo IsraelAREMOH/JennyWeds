@@ -43,7 +43,7 @@ const Navbar = () => {
             </p>
           </div>
 
-          <ul className="hidden lg:flex ml-10 items-center space-x-6 xl:space-x-8">
+          <ul className="hidden lg:flex text-black ml-10 items-center space-x-6 xl:space-x-8">
             {navItems.map((item, index) => (
               <li key={index}>
                 <NavLink className={getNavLinkClass} to={item.href}>

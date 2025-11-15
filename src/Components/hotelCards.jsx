@@ -50,7 +50,7 @@ const HotelCards = () => {
             key={`${hotel.id}-${hotel.name}`}
             className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-gray-300"
           >
-            {/* 🔹 Image Carousel Section */}
+            {/* Image Carousel Section */}
             <div className="relative group">
               <Swiper
                 modules={[Navigation]}
@@ -75,7 +75,7 @@ const HotelCards = () => {
               </span>
             </div>
 
-            {/* 🔹 Details Section */}
+            {/* Details Section */}
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800 break-words">
                 {hotel.name}
@@ -98,7 +98,7 @@ const HotelCards = () => {
               </div>
             </div>
 
-            {/* 🔹 Button Section */}
+            {/* Button Section */}
             <div className="p-4 pt-0">
               <button className="w-full bg-gray-900 text-white py-2 rounded-full text-sm font-medium transition-all duration-200 hover:bg-gray-800 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-600">
                 Check it out online

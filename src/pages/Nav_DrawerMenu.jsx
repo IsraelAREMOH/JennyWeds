@@ -9,7 +9,7 @@ const Nav_DrawerMenu = ({ isOpen, onClose, navItems }) => {
   const [uniqueId, setUniqueId] = useState(null);
   const location = useLocation();
 
-  // 🧠 Extract uniqueId from URL (e.g. ?rsvp=I&A/2025/Table-01/israel-001)
+  //  Extract uniqueId from URL (e.g. ?rsvp=I&A/2025/Table-01/israel-001)
   useEffect(() => {
     const rawQuery = location.search.substring(1);
     const match = rawQuery.match(/id=(.*)/);
@@ -20,7 +20,7 @@ const Nav_DrawerMenu = ({ isOpen, onClose, navItems }) => {
 
       setUniqueId(decodedId);
 
-      // 🧠 Force modal to stay open for testing
+      //  Force modal to stay open for testing
       setTimeout(() => setIsRsvpOpen(true), 300);
     }
   }, [location]);

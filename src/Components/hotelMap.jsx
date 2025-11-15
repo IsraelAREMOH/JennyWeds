@@ -1,5 +1,3 @@
-// components/HotelMap.jsx
-
 import {
   Map,
   AdvancedMarker,

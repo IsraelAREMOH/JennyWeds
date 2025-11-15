@@ -1,4 +1,3 @@
-// src/components/uploadModal.jsx
 import { useState } from "react";
 import axios from "axios";
 
@@ -47,15 +46,15 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
           likes: 0,
         };
 
-        // ✅ Add new image to gallery instantly
+        //  Add new image to gallery instantly
         onUploadSuccess(uploadedImage);
 
-        // ✅ Reset all states
+        //  Reset all states
         setFile(null);
         setUploader("");
         setPreview("");
 
-        // ✅ Close modal automatically
+        //  Close modal automatically
         onClose();
       } else {
         alert(res.data?.message || "Upload failed. Please try again.");

@@ -18,7 +18,7 @@ export default function CheckInPage() {
     setError("");
     setResult(null);
     try {
-      console.log("🟢 Sending to backend:", id);
+      console.log(" Sending to backend:", id);
       const data = await validateGuest(id);
       setResult(data);
       if (data.ok) {
@@ -29,7 +29,7 @@ export default function CheckInPage() {
       }
     } catch (err) {
       console.error(err);
-      setError("❌ Guest not found or server error");
+      setError(" Guest not found or server error");
     } finally {
       setLoading(false);
     }
@@ -166,7 +166,7 @@ export default function CheckInPage() {
             value={manualId}
             onChange={(e) => setManualId(e.target.value)}
             placeholder="I&A/2025/Table-01/john-001"
-            className="border rounded-lg p-2 flex-1 text-sm sm:text-base focus:ring-2 focus:ring-[#A52A2A]"
+            className="border rounded-lg p-2 flex-1 text-gray-500 text-sm sm:text-base focus:ring-2 focus:ring-[#A52A2A]"
           />
           <button
             type="submit"

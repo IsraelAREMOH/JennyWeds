@@ -1,4 +1,3 @@
-// frontend/src/pages/Admin/Dashboard.jsx
 import { useEffect, useState } from "react";
 import { getGuests } from "../../api/adminApi";
 import { useNavigate } from "react-router-dom";
