@@ -206,8 +206,7 @@ export default function CheckInPage() {
             {result.guest && (
               <div className="mt-2 text-sm sm:text-base">
                 <p>
-                  <strong>Name:</strong>{" "}
-                  {`${result.guest.firstName} ${result.guest.lastName}`}
+                  <strong>Name:</strong> {`${result.guest.firstName}`}
                 </p>
                 <p>
                   <strong>Table:</strong> {result.guest.tableNo || "—"}
