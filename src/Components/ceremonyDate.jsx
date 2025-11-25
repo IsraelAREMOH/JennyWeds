@@ -1,5 +1,5 @@
 import { motion as Motion } from "framer-motion";
-import jennys from "../assets/jennys.jpg";
+import shot3 from "../assets/shot3.jpg";
 import shot2 from "../assets/shot2.jpg";
 
 export default function CeremonySection() {
@@ -43,7 +43,7 @@ export default function CeremonySection() {
         {/* Left - Image */}
         <Motion.div className="flex justify-center" variants={fadeUp}>
           <Motion.img
-            src={jennys}
+            src={shot3}
             alt="Couple"
             className="w-[280px] h-[380px] rounded-lg shadow-lg object-cover"
             variants={floating}
