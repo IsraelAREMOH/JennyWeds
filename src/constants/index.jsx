@@ -12,6 +12,9 @@ import jenny12 from "../assets/jenny12.jpg";
 import jenny8 from "../assets/jenny8.jpg";
 import jenny6 from "../assets/jenny6.jpg";
 import jenny7 from "../assets/jenny7.AVIF";
+import shot1 from "../assets/shot1.jpg";
+
+import shot3 from "../assets/shot3.jpg";
 
 import prenoxhotel from "../assets/prenoxhotel.jpg";
 import prenoxhotel1 from "../assets/prenoxhotel1.jpg";
@@ -105,6 +108,8 @@ export const images = [
   { src: jenny10 },
   { src: jenny11 },
   { src: jenny12 },
+  { src: shot1 },
+  { src: shot3 },
 ];
 export const HomeImages = [
   { src: jenny },

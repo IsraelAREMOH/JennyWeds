@@ -1,6 +1,6 @@
 import { motion as Motion } from "framer-motion";
 import jennys from "../assets/jennys.jpg";
-import jenny1 from "../assets/jenny1.jpg";
+import shot2 from "../assets/shot2.jpg";
 
 export default function CeremonySection() {
   // Reusable fade-up animation
@@ -120,7 +120,7 @@ export default function CeremonySection() {
           variants={fadeUp}
         >
           <Motion.img
-            src={jenny1}
+            src={shot2}
             alt="Couple"
             className="w-[280px] h-[380px] rounded-lg shadow-lg object-cover"
             variants={floating}
