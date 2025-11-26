@@ -80,16 +80,26 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
           placeholder="Enter your name"
           value={uploader}
           onChange={(e) => setUploader(e.target.value)}
-          className="w-full border text-gray-500 border-gray-400 p-2 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          className="w-full border text-gray-800 border-gray-400 p-2 rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
         />
 
         {/* File Input */}
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          className="w-full text-gray-500 mb-3"
-        />
+        <div className="mb-3">
+          <label
+            htmlFor="file-upload"
+            className="bg-[#9CAF88] text-white px-6 py-2 rounded-lg cursor-pointer hover:bg-[#9CAF88] transition"
+          >
+            Choose File
+          </label>
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            className="hidden" // hides default input
+          />
+          {file && <span className="ml-3 text-gray-700">{file.name}</span>}
+        </div>
 
         {/* Preview */}
         {preview && (
@@ -114,7 +124,7 @@ export default function UploadModal({ isOpen, onClose, onUploadSuccess }) {
           <button
             onClick={handleUpload}
             disabled={loading}
-            className="px-5 py-2 bg-[#6F4E37] text-white rounded-lg hover:bg-[#8B0000] transition"
+            className="px-5 py-2 bg-[#6F4E37] text-white rounded-lg hover:bg-[#9CAF88] transition"
           >
             {loading ? "Uploading..." : "Upload"}
           </button>
