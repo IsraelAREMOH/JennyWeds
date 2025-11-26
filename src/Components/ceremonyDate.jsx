@@ -3,7 +3,7 @@ import shot3 from "../assets/shot3.jpg";
 import shot2 from "../assets/shot2.jpg";
 
 export default function CeremonySection() {
-  // Reusable fade-up animation
+  // Fade-up animation for scroll-in
   const fadeUp = {
     hidden: { opacity: 0, x: 40 },
     visible: {
@@ -13,15 +13,14 @@ export default function CeremonySection() {
     },
   };
 
-  // Floating / breathing animation for images
+  // Optimized floating animation
   const floating = {
-    initial: { opacity: 0, scale: 0.9, y: 10 },
+    initial: { opacity: 0, y: 0 },
     animate: {
       opacity: 1,
-      scale: [1, 1.03, 1],
-      y: [0, -8, 0],
+      y: [0, -6, 0],
       transition: {
-        duration: 6,
+        duration: 4,
         ease: "easeInOut",
         repeat: Infinity,
         repeatType: "mirror",
@@ -45,7 +44,7 @@ export default function CeremonySection() {
           <Motion.img
             src={shot3}
             alt="Couple"
-            className="w-[280px] h-[380px] rounded-lg shadow-lg object-cover"
+            className="w-[280px] h-[380px] rounded-lg shadow-lg object-cover will-change-transform"
             variants={floating}
             initial="initial"
             animate="animate"
@@ -102,7 +101,7 @@ export default function CeremonySection() {
             <p>1 OKO-OGBA ROAD, IRHIRHI</p>
             <p>JUNCTION, OFF AIRPORT ROAD</p>
             <Motion.a
-              href="https://www.google.com/maps/dir/Lagos/LioraCity+Event+Center,+ADP+junction,+1+Oko+Ogba+Road,+by+Irhirhi+Rd,+Airport+Rd,+Benin+City+300102,+Edo/@6.5874034,3.1671608,8z/data=!4m13!4m12!1m5!1m1!1s0x103b8b2ae68280c1:0xdc9e87a367c3d9cb!2m2!1d3.3552568!2d6.6137395!1m5!1m1!1s0x1040d1a95973a125:0xf594d035422c7342!2m2!1d5.590038!2d6.29515?authuser=0&entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
+              href="https://www.google.com/maps/dir/Lagos/LioraCity+Event+Center"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#9CAF88] hover:underline font-medium mt-2"
@@ -122,7 +121,7 @@ export default function CeremonySection() {
           <Motion.img
             src={shot2}
             alt="Couple"
-            className="w-[280px] h-[380px] rounded-lg shadow-lg object-cover"
+            className="w-[280px] h-[380px] rounded-lg shadow-lg object-cover will-change-transform"
             variants={floating}
             initial="initial"
             animate="animate"
